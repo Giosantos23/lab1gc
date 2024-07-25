@@ -38,6 +38,13 @@ fn main() {
         Vec3::new(374.0, 302.0, 0.0),
     ];
 
+    let polygon3 = vec![
+        Vec3::new(377.0, 249.0, 0.0),
+        Vec3::new(411.0, 197.0, 0.0),
+        Vec3::new(436.0, 249.0, 0.0),
+    ];
+
+
     framebuffer.set_current_color(Color(0x00FFFF)); 
     framebuffer.filled_polygon(&polygon1);
 
@@ -45,7 +52,7 @@ fn main() {
     framebuffer.set_current_color(Color(0xFFFFFF)); 
     framebuffer.draw_polygon(&polygon1);
 
-    // Rellenar el Polígono 2 con color azul
+    // Poligono 2 
     framebuffer.set_current_color(Color(0xFF0000)); 
     framebuffer.filled_polygon(&polygon2);
 
@@ -53,8 +60,16 @@ fn main() {
     framebuffer.set_current_color(Color(0xFFFFFF)); 
     framebuffer.draw_polygon(&polygon2);
 
+    //poligono 3
+    framebuffer.set_current_color(Color(0x0000FF));
+    framebuffer.filled_polygon(&polygon3);
+
+   
+    framebuffer.set_current_color(Color(0xFFFFFF)); 
+    framebuffer.draw_polygon(&polygon3);
+
 
     framebuffer.render_buffer("out.bmp");
         
-    println!("Render de polígono 1");
+    println!("Render de poligono");
 }
